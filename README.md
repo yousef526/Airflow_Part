@@ -61,3 +61,23 @@ Airflow_Part/
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+## Notifications via Email
+
+To enable email notifications (e.g., task success/failure alerts), you need to configure SMTP settings in Airflow.
+
+Update your `airflow.cfg` or environment variables with the following:
+
+```ini
+[smtp]
+smtp_host = smtp.example.com
+smtp_starttls = True
+smtp_ssl = False
+smtp_user = your-email@example.com
+smtp_password = your-password
+smtp_port = 587
+smtp_mail_from = airflow@example.com
+```
+
+> 📌 Make sure your SMTP provider allows external access and the credentials are correct.
