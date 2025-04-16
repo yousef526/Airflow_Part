@@ -1,0 +1,24 @@
+[2025-04-16T13:40:13.430+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stock_info_Proj.Produce_data manual__2025-04-16T13:40:12.552022+00:00 [queued]>
+[2025-04-16T13:40:13.439+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stock_info_Proj.Produce_data manual__2025-04-16T13:40:12.552022+00:00 [queued]>
+[2025-04-16T13:40:13.440+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-04-16T13:40:13.450+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): Produce_data> on 2025-04-16 13:40:12.552022+00:00
+[2025-04-16T13:40:13.455+0000] {standard_task_runner.py:60} INFO - Started process 108 to run task
+[2025-04-16T13:40:13.458+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Stock_info_Proj', 'Produce_data', 'manual__2025-04-16T13:40:12.552022+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/Project_tasks2.py', '--cfg-path', '/tmp/tmpc0fgg2lb']
+[2025-04-16T13:40:13.459+0000] {standard_task_runner.py:88} INFO - Job 22: Subtask Produce_data
+[2025-04-16T13:40:13.508+0000] {task_command.py:423} INFO - Running <TaskInstance: Stock_info_Proj.Produce_data manual__2025-04-16T13:40:12.552022+00:00 [running]> on host b41ca91b48a4
+[2025-04-16T13:40:13.583+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stock_info_Proj' AIRFLOW_CTX_TASK_ID='Produce_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T13:40:12.552022+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-16T13:40:12.552022+00:00'
+[2025-04-16T13:40:13.584+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: apiCall() missing 1 required positional argument: 'company_name'
+[2025-04-16T13:40:13.591+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=Stock_info_Proj, task_id=Produce_data, execution_date=20250416T134012, start_date=20250416T134013, end_date=20250416T134013
+[2025-04-16T13:40:13.600+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 22 for task Produce_data (apiCall() missing 1 required positional argument: 'company_name'; 108)
+[2025-04-16T13:40:13.630+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-16T13:40:13.661+0000] {dagrun.py:822} ERROR - Failed to get task for ti <TaskInstance: Stock_info_Proj.Validate_Output manual__2025-04-16T13:40:12.552022+00:00 [None]>. Marking it as removed.
+[2025-04-16T13:40:13.664+0000] {dagrun.py:822} ERROR - Failed to get task for ti <TaskInstance: Stock_info_Proj.final_notification manual__2025-04-16T13:40:12.552022+00:00 [None]>. Marking it as removed.
+[2025-04-16T13:40:13.671+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

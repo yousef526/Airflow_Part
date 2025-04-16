@@ -1,0 +1,18 @@
+[2025-04-16T12:40:03.085+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stock_info_Proj.Spark_Processing scheduled__2025-04-16T12:00:00+00:00 [queued]>
+[2025-04-16T12:40:03.091+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stock_info_Proj.Spark_Processing scheduled__2025-04-16T12:00:00+00:00 [queued]>
+[2025-04-16T12:40:03.091+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-16T12:40:03.102+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): Spark_Processing> on 2025-04-16 12:00:00+00:00
+[2025-04-16T12:40:03.106+0000] {standard_task_runner.py:60} INFO - Started process 6102 to run task
+[2025-04-16T12:40:03.109+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Stock_info_Proj', 'Spark_Processing', 'scheduled__2025-04-16T12:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/Project_tasks.py', '--cfg-path', '/tmp/tmpjdflgcue']
+[2025-04-16T12:40:03.110+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask Spark_Processing
+[2025-04-16T12:40:03.148+0000] {task_command.py:423} INFO - Running <TaskInstance: Stock_info_Proj.Spark_Processing scheduled__2025-04-16T12:00:00+00:00 [running]> on host af2bad3d929d
+[2025-04-16T12:40:03.211+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stock_info_Proj' AIRFLOW_CTX_TASK_ID='Spark_Processing' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T12:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T12:00:00+00:00'
+[2025-04-16T12:40:55.348+0000] {logging_mixin.py:188} INFO - +----------------------------+
+|split(4. Interval, m, -1)[0]|
++----------------------------+
+|                          60|
++----------------------------+
+[2025-04-16T12:42:35.134+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-04-16T12:42:35.146+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Stock_info_Proj, task_id=Spark_Processing, execution_date=20250416T120000, start_date=20250416T124003, end_date=20250416T124235
+[2025-04-16T12:42:35.203+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-04-16T12:42:35.229+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

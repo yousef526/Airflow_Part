@@ -1,0 +1,22 @@
+[2025-04-16T13:44:55.644+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stock_info_Proj.Spark_Processing manual__2025-04-16T13:44:52.307144+00:00 [queued]>
+[2025-04-16T13:44:55.651+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stock_info_Proj.Spark_Processing manual__2025-04-16T13:44:52.307144+00:00 [queued]>
+[2025-04-16T13:44:55.651+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-04-16T13:44:55.663+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): Spark_Processing> on 2025-04-16 13:44:52.307144+00:00
+[2025-04-16T13:44:55.667+0000] {standard_task_runner.py:60} INFO - Started process 170 to run task
+[2025-04-16T13:44:55.670+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Stock_info_Proj', 'Spark_Processing', 'manual__2025-04-16T13:44:52.307144+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/Project_tasks2.py', '--cfg-path', '/tmp/tmpdtbz0pyd']
+[2025-04-16T13:44:55.671+0000] {standard_task_runner.py:88} INFO - Job 25: Subtask Spark_Processing
+[2025-04-16T13:44:55.714+0000] {task_command.py:423} INFO - Running <TaskInstance: Stock_info_Proj.Spark_Processing manual__2025-04-16T13:44:52.307144+00:00 [running]> on host b41ca91b48a4
+[2025-04-16T13:44:55.784+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stock_info_Proj' AIRFLOW_CTX_TASK_ID='Spark_Processing' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T13:44:52.307144+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-16T13:44:52.307144+00:00'
+[2025-04-16T13:44:55.785+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: process_data() missing 2 required positional arguments: 'time_processing' and 'company'
+[2025-04-16T13:44:55.792+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=Stock_info_Proj, task_id=Spark_Processing, execution_date=20250416T134452, start_date=20250416T134455, end_date=20250416T134455
+[2025-04-16T13:44:55.801+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 25 for task Spark_Processing (process_data() missing 2 required positional arguments: 'time_processing' and 'company'; 170)
+[2025-04-16T13:44:55.842+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-04-16T13:44:55.860+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
